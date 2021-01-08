@@ -27,19 +27,26 @@ function Webshop() {
     console.log(products);
     return products.map((product) => {
       const { id, photo, title, colors, price } = product;
-      const ending = photo.formats.small.url;
-      console.log(ending);
+      const ending = photo.formats.medium.url;
+      const colorsArray = colors
+        .filter((obj) => obj.oneColor)
+        .map((obj) => obj.oneColor)
+        .join(" ");
+
+      //console.log(Object.values(colors));
+      //console.log(colors.find((obj) => obj.oneColor));
+      //console.log(colors.filter((obj) => obj.oneColor).map((obj) => obj.oneColor));
 
       return (
         <div key={id}>
           <img
             src={"//localhost:1337" + ending}
             alt={title}
-            width="200"
-            height="270"
+            width="350"
+            height="470"
           />
-          <h5>{title}</h5>
-          <p>{colors.toString()}</p>
+          <h3>{title}</h3>
+          <p>{colorsArray}</p>
           <p>{price} SEK</p>
         </div>
       );
