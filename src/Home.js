@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Navigation from "./Navigation";
+import { NavLink } from "react-router-dom";
 
 function Home() {
   const [data, setData] = useState(null);
@@ -28,12 +29,13 @@ function Home() {
   return (
     <div>
       <Navigation />
-      <h3>{data[0].title}</h3>
-      <p>{data[0].description}</p>
+      <h1>{data[0].title}</h1>
+      <p className="text">
+        <NavLink to="/products">{data[0].description}</NavLink>
+      </p>
       <img
         src="http://localhost:1337/uploads/home_c9e1f6f472.jpg"
         alt="GIF with clothes"
-        width="500"
       />
     </div>
   );

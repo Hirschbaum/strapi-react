@@ -3,11 +3,25 @@
 }
 
 .links {
-  margin-left: 2%;
+  font-size: 1.8em;
   text-decoration: none;
   display: inline;
   padding: 2%;
   color: rgb(119, 115, 115);
   font-weight: 700;
   letter-spacing: 0.1rem;
+}
+
+.text {
+  font-size: 1.4em;
+}
+
+.small-text {
+  font-size: 1.2em;
+  text-align: justify;
+  margin: 2em 30em;
+}
+
+nav > a.active {
+  color: rgb(241, 139, 22);
 }

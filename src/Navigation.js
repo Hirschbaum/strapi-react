@@ -1,20 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 class Navigation extends React.Component {
   render() {
     return (
-      <nav>
-        <Link className="links" to="/homes">
-          Home
-        </Link>
-        <Link className="links" to="/products">
-          Products
-        </Link>
-        <Link className="links" to="/contacts">
-          Contact
-        </Link>
-      </nav>
+      <div style={{ margin: "2em auto 1em auto" }}>
+        <nav>
+          <NavLink className="links" to="/homes">
+            Home
+          </NavLink>
+          <NavLink className="links" to="/products">
+            Products
+          </NavLink>
+          <NavLink className="links" to="/contacts">
+            Contact
+          </NavLink>
+        </nav>
+      </div>
     );
   }
 }

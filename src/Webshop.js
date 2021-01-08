@@ -45,9 +45,9 @@ function Webshop() {
             width="350"
             height="470"
           />
-          <h3>{title}</h3>
-          <p>{colorsArray}</p>
-          <p>{price} SEK</p>
+          <h2>{title}</h2>
+          <p className="text">{colorsArray}</p>
+          <p className="text">{price} SEK</p>
         </div>
       );
     });
@@ -56,8 +56,7 @@ function Webshop() {
   return (
     <div>
       <Navigation />
-      <h3>Products</h3>
-      {renderProducts()}
+      <div style={{ marginTop: "3%" }}>{renderProducts()}</div>
     </div>
   );
 }
