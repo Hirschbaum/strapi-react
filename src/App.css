@@ -1,3 +1,13 @@
 .App {
   text-align: center;
 }
+
+.links {
+  margin-left: 2%;
+  text-decoration: none;
+  display: inline;
+  padding: 2%;
+  color: rgb(119, 115, 115);
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
