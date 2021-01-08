@@ -23,19 +23,32 @@ function Webshop() {
     return <Navigation />;
   }
 
+  function handleFavorite(e, id, favorite) {
+    e.preventDefault();
+
+    axios
+      .put(`http://localhost:1337/products/${id}`, { favorite: !favorite }, [
+        "Content-Type",
+      ])
+      .then((res) => {
+        //update products with res.data
+        console.log("POSTING NEW DATA");
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log("Error while posting favorite", err);
+      });
+  }
+
   function renderProducts() {
     console.log(products);
     return products.map((product) => {
-      const { id, photo, title, colors, price } = product;
+      const { id, photo, title, colors, price, favorite } = product;
       const ending = photo.formats.medium.url;
       const colorsArray = colors
         .filter((obj) => obj.oneColor)
         .map((obj) => obj.oneColor)
         .join(" ");
-
-      //console.log(Object.values(colors));
-      //console.log(colors.find((obj) => obj.oneColor));
-      //console.log(colors.filter((obj) => obj.oneColor).map((obj) => obj.oneColor));
 
       return (
         <div key={id} className="product-card">
@@ -47,8 +60,15 @@ function Webshop() {
           />
           <div className="product-with-favorite">
             <h2>{title}</h2>
-            <button className="favorite-button">
-              <span className="material-icons">favorite_border</span>
+            <button
+              className="favorite-button"
+              onClick={(e) => handleFavorite(e, id, favorite)}
+            >
+              {favorite === false ? (
+                <span className="material-icons">favorite_border</span>
+              ) : (
+                <span className="material-icons">favorite</span>
+              )}
             </button>
           </div>
           <p className="text">{colorsArray}</p>
