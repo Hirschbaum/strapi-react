@@ -38,14 +38,19 @@ function Webshop() {
       //console.log(colors.filter((obj) => obj.oneColor).map((obj) => obj.oneColor));
 
       return (
-        <div key={id}>
+        <div key={id} className="product-card">
           <img
             src={"//localhost:1337" + ending}
             alt={title}
             width="350"
             height="470"
           />
-          <h2>{title}</h2>
+          <div className="product-with-favorite">
+            <h2>{title}</h2>
+            <button className="favorite-button">
+              <span className="material-icons">favorite_border</span>
+            </button>
+          </div>
           <p className="text">{colorsArray}</p>
           <p className="text">{price} SEK</p>
         </div>
@@ -56,7 +61,10 @@ function Webshop() {
   return (
     <div>
       <Navigation />
-      <div style={{ marginTop: "3%" }}>{renderProducts()}</div>
+
+      <div className="product-container" style={{ marginTop: "3%" }}>
+        {renderProducts()}
+      </div>
     </div>
   );
 }
