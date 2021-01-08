@@ -31,9 +31,12 @@ function Webshop() {
         "Content-Type",
       ])
       .then((res) => {
-        //update products with res.data
+        //TO DO NEXT: update products with res.data
         console.log("POSTING NEW DATA");
-        console.log(res.data);
+        console.log(res);
+        //const updatedItem = res;
+        //setProducts((products) => [...products, updatedItem]);
+        window.location.reload();
       })
       .catch((err) => {
         console.log("Error while posting favorite", err);
@@ -41,7 +44,7 @@ function Webshop() {
   }
 
   function renderProducts() {
-    console.log(products);
+    //console.log(products);
     return products.map((product) => {
       const { id, photo, title, colors, price, favorite } = product;
       const ending = photo.formats.medium.url;
