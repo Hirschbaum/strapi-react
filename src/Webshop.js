@@ -31,12 +31,9 @@ function Webshop() {
         "Content-Type",
       ])
       .then((res) => {
-        //TO DO NEXT: update products with res.data
         console.log("POSTING NEW DATA");
         console.log(res);
-        //const updatedItem = res;
-        //setProducts((products) => [...products, updatedItem]);
-        window.location.reload();
+        getProducts(); //update products with the updatated favorite
       })
       .catch((err) => {
         console.log("Error while posting favorite", err);
@@ -82,7 +79,7 @@ function Webshop() {
   }
 
   return (
-    <div>
+    <div className="App">
       <Navigation />
 
       <div className="product-container" style={{ marginTop: "3%" }}>

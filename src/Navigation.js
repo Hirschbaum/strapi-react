@@ -6,7 +6,7 @@ class Navigation extends React.Component {
     return (
       <div style={{ margin: "2em auto 1em auto" }}>
         <nav>
-          <NavLink className="links" to="/homes">
+          <NavLink className="links" to="/home">
             Home
           </NavLink>
           <NavLink className="links" to="/products">
@@ -14,6 +14,9 @@ class Navigation extends React.Component {
           </NavLink>
           <NavLink className="links" to="/contacts">
             Contact
+          </NavLink>
+          <NavLink className="links" to="/favorites">
+            <span className="material-icons">favorite_border</span>
           </NavLink>
         </nav>
       </div>

@@ -29,6 +29,7 @@ nav > a.active {
 .product-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .product-card {
@@ -37,7 +38,8 @@ nav > a.active {
 
 .product-with-favorite {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin: 0 2%;
 }
 
 .favorite-button {
@@ -45,4 +47,10 @@ nav > a.active {
   border: 1px solid transparent;
   background-color: transparent;
   outline: none;
+}
+
+.favorites-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
