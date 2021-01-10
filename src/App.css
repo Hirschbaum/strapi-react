@@ -49,8 +49,31 @@ nav > a.active {
   outline: none;
 }
 
+.favorite-button:hover {
+  cursor: pointer;
+}
+
 .favorites-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul > li {
+  display: inline;
+  float: left;
+  margin: 0 1em;
+}
+
+li:active {
+  color: rgb(241, 139, 22);
+  font-size: 1.2em;
+}
+
+li:hover {
+  cursor: pointer;
 }
