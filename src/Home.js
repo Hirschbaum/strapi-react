@@ -24,8 +24,6 @@ function Home() {
     return <Navigation />;
   }
 
-  console.log(data);
-
   return (
     <div>
       <Navigation />

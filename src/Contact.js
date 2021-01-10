@@ -26,8 +26,6 @@ function Contact() {
     return <Navigation />;
   }
 
-  console.log(contacts);
-
   return (
     <div>
       <Navigation />

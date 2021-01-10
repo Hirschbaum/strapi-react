@@ -18,7 +18,7 @@ function Webshop() {
     axios
       .get("http://localhost:1337/categories")
       .then((response) => {
-        console.log(response);
+        //console.log(response);
         setCategories(response.data);
       })
       .catch((error) => {
@@ -54,8 +54,8 @@ function Webshop() {
         "Content-Type",
       ])
       .then((res) => {
-        console.log("POSTING NEW DATA");
-        console.log(res);
+        //console.log("POSTING NEW DATA");
+        //console.log(res);
         getProducts(); //update products with the updatated favorite
       })
       .catch((err) => {
@@ -66,7 +66,7 @@ function Webshop() {
   function renderCategoryNames() {
     return categories.map((category) => {
       const { name, published_at } = category;
-      console.log(name);
+      //console.log(name);
       return <li key={published_at}>{name}</li>;
     });
   }
